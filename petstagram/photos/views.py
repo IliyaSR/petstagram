@@ -24,11 +24,13 @@ def photo_details_page(request, pk):
     photo = Photo.objects.get(pk=pk)
     likes = photo.like_set.count()
     comments = photo.comment_set.all()
+    photo_is_liked_by_user = likes.filter(user=request.user)
 
     context = {
         'photo': photo,
         'likes': likes,
-        'comments': comments
+        'comments': comments,
+        'photo_is_liked_by_user': photo_is_liked_by_user
     }
 
     return render(request, template_name='photos/photo-details-page.html', context=context)
