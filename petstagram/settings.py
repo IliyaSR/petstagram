@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'petstagram.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'petstagram-1',  # database name
+        'NAME': 'petstagram-3',  # database name
         'USER': 'postgres-user',  # postgres user
         'PASSWORD': 'password',  # postgres password
         'HOST': '127.0.0.1',  # postgres host
@@ -94,19 +94,11 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+
+
 ]
+
+AUTH_USER_MODEL = 'accounts.PetstagramUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
